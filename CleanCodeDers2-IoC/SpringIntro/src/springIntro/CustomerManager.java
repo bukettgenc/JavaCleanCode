@@ -3,16 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package springintro;
+package springIntro;
 
 /**
  *
  * @author buket.genc
  */
-public class MysqlCustomerDal implements ICustomerDal{
+public class CustomerManager {
 
-    @Override
+    private ICustomerDal iCustomerDal;
+
+    public CustomerManager(ICustomerDal iCustomerDal) {
+        this.iCustomerDal = iCustomerDal;
+    }
+
     public void add() {
-        System.out.println("Mysql veritabanına eklendi.");    }
-    
+        iCustomerDal.add();
+    }
 }

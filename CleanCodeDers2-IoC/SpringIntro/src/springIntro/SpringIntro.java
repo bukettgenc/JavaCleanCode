@@ -3,7 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package springintro;
+package springIntro;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 
 /**
  *
@@ -15,7 +18,9 @@ public class SpringIntro {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-      CustomerManager customerManager=new CustomerManager(new OracleCustomerDal());
+        ClassPathXmlApplicationContext context=new ClassPathXmlApplicationContext("src/applicationContext.xml");
+        
+      CustomerManager customerManager=new CustomerManager(context.getBean("database",ICustomerDal.class));
       customerManager.add();
     }
     //IoC -  Inversion of Control
