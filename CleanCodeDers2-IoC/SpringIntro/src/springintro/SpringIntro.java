@@ -15,7 +15,8 @@ public class SpringIntro {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+      CustomerManager customerManager=new CustomerManager(new OracleCustomerDal());
+      customerManager.add();
     }
     //IoC -  Inversion of Control
     //Bu yapıyı ayağa kaldıran tasarım deseni ise dependency injection
